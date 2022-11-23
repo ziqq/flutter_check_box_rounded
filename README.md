@@ -1,4 +1,4 @@
-# Flutter Checkbox Rounded
+# Flutter Check Box Rounded
 
 [![style: effective dart](https://img.shields.io/badge/style-effective_dart-40c4ff.svg)](https://github.com/tenhobi/effective_dart)
 
@@ -12,7 +12,7 @@ Add App Version Checker to your pubspec:
 
 ```yaml
 dependencies:
-  check_box_rounded: any # or the latest version on Pub
+  flutter_check_box_rounded: any # or the latest version on Pub
 ```
 
 ### Example
