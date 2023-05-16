@@ -30,7 +30,7 @@ CheckBoxRounded(
 
 That will generate this:
 
-<img src="https://github.com/ziqq/flutter_check_box_rounded/blob/main/images/1.gif?raw=true" width="375" alt="enter image description here">
+<img src="https://github.com/ziqq/flutter_check_box_rounded/blob/main/.images/1.gif?raw=true" width="375" alt="enter image description here">
 
 ### Customize to your needs
 You can customize all sort of behaviors and look you want. You can do things like setting selected/unselected color, selected/unselected
@@ -38,4 +38,4 @@ widgets, duration of the animation, etc.
 
 The next example show some of the customizations.
 
-<img src="https://github.com/ziqq/flutter_check_box_rounded/blob/main/images/2.gif?raw=true" width="375" alt="enter image description here">
+<img src="https://github.com/ziqq/flutter_check_box_rounded/blob/main/.images/2.gif?raw=true" width="375" alt="enter image description here">
