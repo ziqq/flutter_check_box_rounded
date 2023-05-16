@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.1.5
+ - Update LICENSE
+
 ## 3.1.0 - 3.1.4
  - Update README & Example
 
