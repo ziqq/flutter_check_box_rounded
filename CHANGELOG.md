@@ -1,7 +1,6 @@
 # Changelog
 
-
-## 3.1.0 - 3.1.3
+## 3.1.0 - 3.1.4
  - Update README & Example
 
 ## 3.1.0

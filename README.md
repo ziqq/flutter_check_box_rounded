@@ -7,11 +7,11 @@
 
 ### Description
 
-Package created to give a fully functional and customizable rounded CheckBox.
+Package created to give a fully functional and customizable rounded checkbox.
 
 ### Installation
 
-Add App Version Checker to your pubspec:
+Add CheckBoxRounded to your pubspec:
 
 ```yaml
 dependencies:
