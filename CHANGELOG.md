@@ -1,9 +1,7 @@
 # Changelog
 
-## 3.1.2
- - Update README
 
-## 3.1.1
+## 3.1.0 - 3.1.3
  - Update README & Example
 
 ## 3.1.0
