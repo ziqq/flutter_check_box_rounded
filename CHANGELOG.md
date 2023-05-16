@@ -1,9 +1,16 @@
 # Changelog
 
-## [3.0.0] - Final functional release
+## 3.1.0
+ - Fixed setState(() {}) in widget lifecycle
 
-## [2.0.0] - Migrated package to use null safety
+## 3.0.0
+ - Released final functionalyti
 
-## [1.0.0+1] - Adding documentation
+## 2.0.0
+ - Migrated to use null safety
 
-## [1.0.0] - First functional release
+## 1.1.0
+ - Adding documentation
+
+## 1.0.0
+ - Released first functionalyti
