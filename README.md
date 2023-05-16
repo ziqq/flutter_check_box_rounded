@@ -28,7 +28,7 @@ CheckBoxRounded(
 That will generate this:
 
 <!-- ![enter image description here](http://g.recordit.co/QYABeKPzNR.gif) -->
-<img src=".images/1.png" alt="enter image description here">
+<img src=".images/1.png" width="375" alt="enter image description here">
 
 ## Customize to your needs
 You can customize all sort of behaviors and look you want. You can do things like setting selected/unselected color, selected/unselected
@@ -37,4 +37,4 @@ widgets, duration of the animation, etc.
 The next example show some of the customizations.
 
 <!-- ![enter image description here](http://g.recordit.co/8rtRTco6SE.gif) -->
-<img src=".images/2.png" alt="[enter image description here">
+<img src=".images/2.png" width="375" alt="enter image description here">
