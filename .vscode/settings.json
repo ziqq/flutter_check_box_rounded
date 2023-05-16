@@ -1,3 +1,7 @@
 {
-    "dart.runPubGetOnPubspecChanges": "never"
-}
+    "dart.runPubGetOnPubspecChanges": "never",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.dart": "${capture}.mobile.dart, ${capture}.tablet.dart, ${capture}.desktop.dart, ${capture}.form.dart, ${capture}.g.dart, ${capture}.freezed.dart"
+    },
+  }
