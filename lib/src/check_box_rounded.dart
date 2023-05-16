@@ -1,8 +1,9 @@
 // autor - <a.a.ustinoff@gmail.com> Anton Ustinoff
-import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 
-///Widget that draw a beautiful checkbox rounded. Provided with animation if wanted
+import 'package:flutter/material.dart';
+
+/// Widget that draw a beautiful checkbox rounded.
+/// Provided with animation if wanted.
 class CheckBoxRounded extends StatefulWidget {
   const CheckBoxRounded({
     Key? key,
@@ -17,31 +18,31 @@ class CheckBoxRounded extends StatefulWidget {
     required this.onTap,
   }) : super(key: key);
 
-  ///Define the size of the checkbox
+  /// Define the size of the checkbox
   final double? size;
 
-  ///Define wether the checkbox is marked or not
+  /// Define wether the checkbox is marked or not
   final bool? isChecked;
 
-  ///Define the border of the widget
+  /// Define the border of the widget
   final Color? borderColor;
 
-  ///Define the color that is shown when Widgets is checked
+  /// Define the color that is shown when Widgets is checked
   final Color? checkedColor;
 
-  ///Define the color that is shown when Widgets is unchecked
+  /// Define the color that is shown when Widgets is unchecked
   final Color? uncheckedColor;
 
-  ///Define the widget that is shown when Widgets is checked
+  /// Define the widget that is shown when Widgets is checked
   final Widget? checkedWidget;
 
-  ///Define the widget that is shown when Widgets is unchecked
+  /// Define the widget that is shown when Widgets is unchecked
   final Widget? uncheckedWidget;
 
-  ///Define Function that os executed when user tap on checkbox
+  /// Define Function that os executed when user tap on checkbox
   final Function(bool?) onTap;
 
-  ///Define the duration of the animation. If any
+  /// Define the duration of the animation. If any
   final Duration? animationDuration;
 
   @override
@@ -49,14 +50,14 @@ class CheckBoxRounded extends StatefulWidget {
 }
 
 class _CheckBoxRoundedState extends State<CheckBoxRounded> {
-  late Duration animationDuration;
-  late Widget uncheckedWidget;
-  late Widget checkedWidget;
-  late Color uncheckedColor;
-  late Color checkedColor;
-  late Color borderColor;
-  late bool isChecked;
   late double size;
+  late bool isChecked;
+  late Color borderColor;
+  late Color checkedColor;
+  late Color uncheckedColor;
+  late Widget checkedWidget;
+  late Widget uncheckedWidget;
+  late Duration animationDuration;
 
   @override
   void initState() {
@@ -71,7 +72,7 @@ class _CheckBoxRoundedState extends State<CheckBoxRounded> {
     checkedWidget = widget.checkedWidget ??
         Icon(Icons.check_rounded, color: Colors.white, size: size / 1.2);
 
-    SchedulerBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       borderColor = widget.borderColor ?? Theme.of(context).dividerColor;
       checkedColor =
           widget.checkedColor ?? Theme.of(context).colorScheme.secondary;
