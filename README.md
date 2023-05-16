@@ -5,11 +5,11 @@
 
 # flutter_check_box_rounded
 
-### Description
+## Description
 
 Package created to give a fully functional and customizable rounded checkbox.
 
-### Installation
+## Installation
 
 Add CheckBoxRounded to your pubspec:
 
@@ -18,7 +18,7 @@ dependencies:
   flutter_check_box_rounded: any # or the latest version on Pub
 ```
 
-### Example
+## Example
 
 The most simple use is this one. A prepared round checkbox that has a callback when selected/unselected.
 
@@ -32,7 +32,7 @@ That will generate this:
 
 <img src="https://github.com/ziqq/flutter_check_box_rounded/blob/main/.images/1.gif?raw=true" width="375" alt="enter image description here">
 
-### Customize to your needs
+## Customize to your needs
 You can customize all sort of behaviors and look you want. You can do things like setting selected/unselected color, selected/unselected
 widgets, duration of the animation, etc.
 
