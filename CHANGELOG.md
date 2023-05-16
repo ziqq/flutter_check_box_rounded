@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.1.1
+ - Update README & Example
+
 ## 3.1.0
  - Fixed setState(() {}) in widget lifecycle
 
