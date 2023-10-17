@@ -4,7 +4,7 @@ homepage: https://github.com/ziqq/flutter_check_box_rounded
 version: 3.1.6
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=2.19.0 <=4.0.0"
   flutter: ">=3.0.0"
 
 dependencies:
