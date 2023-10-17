@@ -1,22 +1,33 @@
 # Changelog
 
+## 3.1.6
+  ### Update
+  - Added `void` return result from `onTap` method
+
 ## 3.1.5
- - Update LICENSE
+  ### Update
+  - `LICENSE`
 
 ## 3.1.0 - 3.1.4
- - Update README & Example
+  ### Update
+  - `README` & `Example`
 
 ## 3.1.0
- - Fixed setState(() {}) in widget lifecycle
+  ### Fixed
+  - `setState(() {})` in widget lifecycle
 
 ## 3.0.0
- - Released final functionalyti
+  ### Feat
+  - Released final functionality
 
 ## 2.0.0
- - Migrated to use null safety
+  ### Update
+  - Migrated to use null safety
 
 ## 1.1.0
- - Adding documentation
+  ### Feat
+  - Adding documentation
 
 ## 1.0.0
- - Released first functionalyti
+  ### Feat
+  - Released first functionality
