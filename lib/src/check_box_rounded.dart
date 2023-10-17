@@ -40,7 +40,7 @@ class CheckBoxRounded extends StatefulWidget {
   final Widget? uncheckedWidget;
 
   /// Define Function that os executed when user tap on checkbox
-  final Function(bool?) onTap;
+  final void Function(bool?) onTap;
 
   /// Define the duration of the animation. If any
   final Duration? animationDuration;
