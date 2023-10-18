@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.1
+  ### Fix
+  - Removed `required` from `onTap`
+
 ## 3.2.0
   ### Feat
   - Added customize propertie `borderWidth`
