@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 /// Provided with animation if wanted.
 class CheckBoxRounded extends StatefulWidget {
   const CheckBoxRounded({
-    required this.onTap,
+    this.onTap,
     this.isChecked,
     this.size,
     this.borderWidth = 1.0,
