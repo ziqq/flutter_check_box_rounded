@@ -6,23 +6,27 @@ import 'package:flutter/material.dart';
 /// Provided with animation if wanted.
 class CheckBoxRounded extends StatefulWidget {
   const CheckBoxRounded({
-    Key? key,
-    this.size,
+    required this.onTap,
     this.isChecked,
+    this.size,
+    this.borderWidth = 1.0,
     this.borderColor,
     this.checkedColor,
     this.uncheckedColor,
     this.checkedWidget,
     this.uncheckedWidget,
     this.animationDuration,
-    required this.onTap,
+    Key? key,
   }) : super(key: key);
+
+  /// Define wether the checkbox is marked or not
+  final bool? isChecked;
 
   /// Define the size of the checkbox
   final double? size;
 
-  /// Define wether the checkbox is marked or not
-  final bool? isChecked;
+  /// Define the width of the border checkbox
+  final double borderWidth;
 
   /// Define the border of the widget
   final Color? borderColor;
@@ -40,7 +44,7 @@ class CheckBoxRounded extends StatefulWidget {
   final Widget? uncheckedWidget;
 
   /// Define Function that os executed when user tap on checkbox
-  final void Function(bool?) onTap;
+  final void Function(bool?)? onTap;
 
   /// Define the duration of the animation. If any
   final Duration? animationDuration;
@@ -50,85 +54,76 @@ class CheckBoxRounded extends StatefulWidget {
 }
 
 class _CheckBoxRoundedState extends State<CheckBoxRounded> {
-  late double size;
-  late bool isChecked;
-  late Color borderColor;
-  late Color checkedColor;
-  late Color uncheckedColor;
-  late Widget checkedWidget;
-  late Widget uncheckedWidget;
-  late Duration animationDuration;
+  bool _isChecked = false;
 
   @override
   void initState() {
     super.initState();
-    size = widget.size ?? 24.0;
-    isChecked = widget.isChecked ?? false;
-    animationDuration =
-        widget.animationDuration ?? const Duration(milliseconds: 100);
-    uncheckedWidget = widget.uncheckedWidget != null
-        ? SizedBox(child: widget.uncheckedWidget)
-        : const SizedBox.shrink();
-    checkedWidget = widget.checkedWidget ??
-        Icon(Icons.check_rounded, color: Colors.white, size: size / 1.2);
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      borderColor = widget.borderColor ?? Theme.of(context).dividerColor;
-      checkedColor =
-          widget.checkedColor ?? Theme.of(context).colorScheme.secondary;
-      uncheckedColor =
-          widget.uncheckedColor ?? Theme.of(context).scaffoldBackgroundColor;
-    });
+    if (widget.isChecked != null) {
+      _isChecked = widget.isChecked ?? false;
+    }
   }
 
   @override
   void didUpdateWidget(covariant CheckBoxRounded oldWidget) {
-    if (oldWidget.isChecked != widget.isChecked) {
-      isChecked = widget.isChecked!;
-    }
-    if (oldWidget.borderColor != widget.borderColor) {
-      borderColor = widget.borderColor!;
-    }
-    if (oldWidget.checkedColor != widget.checkedColor) {
-      checkedColor = widget.checkedColor!;
-    }
-    if (oldWidget.uncheckedColor != widget.uncheckedColor) {
-      uncheckedColor = widget.uncheckedColor!;
+    if (widget.isChecked != null && oldWidget.isChecked != widget.isChecked) {
+      _isChecked = widget.isChecked!;
     }
     super.didUpdateWidget(oldWidget);
   }
 
   @override
-  void didChangeDependencies() {
-    borderColor = widget.borderColor ?? Theme.of(context).dividerColor;
-    checkedColor =
-        widget.checkedColor ?? Theme.of(context).colorScheme.secondary;
-    uncheckedColor =
-        widget.uncheckedColor ?? Theme.of(context).scaffoldBackgroundColor;
-    super.didChangeDependencies();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    debugCheckHasMaterial(context);
+
+    final ThemeData themeData = Theme.of(context);
+
+    final double effectiveIconSize = widget.size ?? 24.0;
+
+    final Color effectiveBorderColor =
+        widget.borderColor ?? themeData.dividerColor;
+
+    final Color effectiveCheckedColor =
+        widget.checkedColor ?? themeData.colorScheme.secondary;
+
+    final Color effectiveUncheckedColor =
+        widget.uncheckedColor ?? themeData.scaffoldBackgroundColor;
+
+    final effectiveAnimationDuration =
+        widget.animationDuration ?? const Duration(milliseconds: 100);
+
+    final Widget checkedWidget = widget.checkedWidget ??
+        Icon(
+          Icons.check_rounded,
+          color: Colors.white,
+          size: effectiveIconSize / 1.2,
+        );
+
+    final Widget uncheckedWidget = widget.uncheckedWidget != null
+        ? SizedBox(child: widget.uncheckedWidget)
+        : const SizedBox.shrink();
+
     return GestureDetector(
       onTap: () {
-        widget.onTap(!isChecked);
-        setState(() => isChecked = !isChecked);
+        widget.onTap?.call(!_isChecked);
+        setState(() => _isChecked = !_isChecked);
       },
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(size / 2),
+        borderRadius: const BorderRadius.all(Radius.circular(100)),
         child: AnimatedContainer(
-          width: size,
-          height: size,
-          duration: animationDuration,
+          duration: effectiveAnimationDuration,
+          width: effectiveIconSize,
+          height: effectiveIconSize,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(size / 2),
-            color: isChecked ? checkedColor : uncheckedColor,
             border: Border.all(
-              color: isChecked ? Colors.transparent : borderColor,
+              width: widget.borderWidth,
+              color: _isChecked ? Colors.transparent : effectiveBorderColor,
             ),
+            borderRadius: const BorderRadius.all(Radius.circular(100)),
+            color: _isChecked ? effectiveCheckedColor : effectiveUncheckedColor,
           ),
-          child: isChecked ? checkedWidget : uncheckedWidget,
+          child: _isChecked ? checkedWidget : uncheckedWidget,
         ),
       ),
     );
