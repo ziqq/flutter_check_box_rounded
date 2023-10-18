@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_check_box_rounded/flutter_check_box_rounded.dart';
 
+const _verticalSpacing = SizedBox(height: 20);
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -10,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Check Box Rounded Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -28,7 +31,6 @@ class CheckBoxView extends StatefulWidget {
 }
 
 class _CheckBoxViewState extends State<CheckBoxView> {
-  final _verticalSpacing = const SizedBox(height: 20);
   bool? _isChecked;
 
   @override
