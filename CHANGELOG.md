@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.0
+  ### Feat
+  - Added customize propertie `borderWidth`
+  ### Update
+  - Will initialise properties in `build` method, not `widget cycle`
+
 ## 3.1.6
   ### Update
   - Added `void` return result from `onTap` method
