@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 class CheckBoxRounded extends StatefulWidget {
   const CheckBoxRounded({
     this.onTap,
-    this.isChecked,
     this.size,
     this.borderWidth = 1.0,
     this.borderColor,
@@ -16,11 +15,16 @@ class CheckBoxRounded extends StatefulWidget {
     this.checkedWidget,
     this.uncheckedWidget,
     this.animationDuration,
+    this.isChecked,
+    this.disable = false,
     Key? key,
   }) : super(key: key);
 
   /// Define wether the checkbox is marked or not
   final bool? isChecked;
+
+  /// Defines interactive changing [isChecked] value on tap gesture
+  final bool disable;
 
   /// Define the size of the checkbox
   final double? size;
@@ -104,28 +108,32 @@ class _CheckBoxRoundedState extends State<CheckBoxRounded> {
         ? SizedBox(child: widget.uncheckedWidget)
         : const SizedBox.shrink();
 
-    return GestureDetector(
-      onTap: () {
-        widget.onTap?.call(!_isChecked);
-        setState(() => _isChecked = !_isChecked);
-      },
-      child: ClipRRect(
-        borderRadius: const BorderRadius.all(Radius.circular(100)),
-        child: AnimatedContainer(
-          duration: effectiveAnimationDuration,
-          width: effectiveIconSize,
-          height: effectiveIconSize,
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: widget.borderWidth,
-              color: _isChecked ? Colors.transparent : effectiveBorderColor,
-            ),
-            borderRadius: const BorderRadius.all(Radius.circular(100)),
-            color: _isChecked ? effectiveCheckedColor : effectiveUncheckedColor,
+    final Widget child = ClipRRect(
+      borderRadius: const BorderRadius.all(Radius.circular(100)),
+      child: AnimatedContainer(
+        duration: effectiveAnimationDuration,
+        width: effectiveIconSize,
+        height: effectiveIconSize,
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: widget.borderWidth,
+            color: _isChecked ? Colors.transparent : effectiveBorderColor,
           ),
-          child: _isChecked ? checkedWidget : uncheckedWidget,
+          borderRadius: const BorderRadius.all(Radius.circular(100)),
+          color: _isChecked ? effectiveCheckedColor : effectiveUncheckedColor,
         ),
+        child: _isChecked ? checkedWidget : uncheckedWidget,
       ),
     );
+
+    return widget.disable
+        ? child
+        : GestureDetector(
+            onTap: () {
+              widget.onTap?.call(!_isChecked);
+              setState(() => _isChecked = !_isChecked);
+            },
+            child: child,
+          );
   }
 }
