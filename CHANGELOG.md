@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.2
+  ### Feat
+  - Added `disable` property which defines interactive changing `isChecked` value on tap gesture
+
 ## 3.2.1
   ### Fix
   - Removed `required` from `onTap`
