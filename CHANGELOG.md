@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.3
+  ### Update
+  - packages version's
+  - `analysis_options` make easy
+
+
 ## 3.2.2
   ### Feat
   - Added `disable` property which defines interactive changing `isChecked` value on tap gesture
