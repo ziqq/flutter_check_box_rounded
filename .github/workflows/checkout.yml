@@ -56,7 +56,7 @@ jobs:
       - name: 👷 Install Dependencies
         timeout-minutes: 1
         run: |
-          dart pub get -C .
+          flutter pub get
 
       - name: 🔎 Check format
         timeout-minutes: 1
