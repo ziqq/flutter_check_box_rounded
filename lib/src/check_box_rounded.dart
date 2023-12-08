@@ -2,9 +2,13 @@
 
 import 'package:flutter/material.dart';
 
+/// {@template check_box_rounded}
+/// CheckBoxRounded widget.
 /// Widget that draw a beautiful checkbox rounded.
 /// Provided with animation if wanted.
+/// {@endtemplate}
 class CheckBoxRounded extends StatefulWidget {
+  /// {@macro check_box_rounded}
   const CheckBoxRounded({
     this.onTap,
     this.size,
@@ -17,8 +21,8 @@ class CheckBoxRounded extends StatefulWidget {
     this.animationDuration,
     this.isChecked,
     this.disable = false,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   /// Define wether the checkbox is marked or not
   final bool? isChecked;
@@ -48,7 +52,8 @@ class CheckBoxRounded extends StatefulWidget {
   final Widget? uncheckedWidget;
 
   /// Define Function that os executed when user tap on checkbox
-  final void Function(bool?)? onTap;
+  // ignore: avoid_positional_boolean_parameters
+  final void Function(bool? value)? onTap;
 
   /// Define the duration of the animation. If any
   final Duration? animationDuration;
@@ -79,7 +84,7 @@ class _CheckBoxRoundedState extends State<CheckBoxRounded> {
 
   @override
   Widget build(BuildContext context) {
-    debugCheckHasMaterial(context);
+    assert(debugCheckHasMaterial(context));
 
     final ThemeData themeData = Theme.of(context);
 
