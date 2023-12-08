@@ -1,4 +1,5 @@
 ignore:
+  - dart_code_metrics_presets
   - dart_code_metrics
   - flutter_lints
 
