@@ -9,6 +9,23 @@ on:
 jobs:
   publish:
     name: "Publish to Pub.dev"
-    permissions:
-      id-token: write # Required for authentication using OIDC
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Install and set flutter version
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Check flutter version
+        run: flutter --version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Publish
+        uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
