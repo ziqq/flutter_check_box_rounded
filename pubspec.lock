@@ -45,10 +45,10 @@ packages:
     dependency: transitive
     description:
       name: dart_code_metrics_presets
-      sha256: e0a408c307d1256176f7702db32999761f36ac4f9d8a7a65fbc1a13eafcf844c
+      sha256: "06e1aea3e4c2beb555ed1ac92366fbc8040ad0b36a0dbd4ec501c11cdb3e57a8"
       url: "https://pub.dev"
     source: hosted
-    version: "2.6.0"
+    version: "2.7.0"
   fake_async:
     dependency: transitive
     description:
@@ -67,7 +67,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: a23126f29c12b9ef168cc5af90b486c58eb82b9d
+      resolved-ref: "87db252bb9db1c1859c19228012fde0efbf78b49"
       url: "https://github.com/ziqq/flutter_lint_rules.git"
     source: git
     version: "2.1.0"
@@ -195,4 +195,3 @@ packages:
     version: "0.3.0"
 sdks:
   dart: ">=3.2.0-194.0.dev <4.0.0"
-  flutter: ">=3.0.0"
