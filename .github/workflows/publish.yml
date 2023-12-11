@@ -8,27 +8,31 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
-    container:
-      image:  google/dart:latest
-    steps:
-    - uses: actions/checkout@v1
+    uses: ziqq/flutter_ci_workflows/.github/workflows/publish_to_pub.yml@main
 
-    - name: Setup credentials
-      run: |
-        mkdir -p ~/.pub-cache
-        cat <<EOF > ~/.pub-cache/credentials.json
-        {
-          "accessToken":"${{ secrets.OAUTH_ACCESS_TOKEN }}",
-          "refreshToken":"${{ secrets.OAUTH_REFRESH_TOKEN }}",
-          "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
-          "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
-          "expiration": 1570721159347
-        }
-        EOF
+# jobs:
+#   publish:
+#     runs-on: ubuntu-latest
+#     container:
+#       image:  google/dart:latest
+#     steps:
+#     - uses: actions/checkout@v1
 
-    - name: Publish - dry run
-      run: flutter pub publish --dry-run
+#     - name: Setup credentials
+#       run: |
+#         mkdir -p ~/.pub-cache
+#         cat <<EOF > ~/.pub-cache/credentials.json
+#         {
+#           "accessToken":"${{ secrets.OAUTH_ACCESS_TOKEN }}",
+#           "refreshToken":"${{ secrets.OAUTH_REFRESH_TOKEN }}",
+#           "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
+#           "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
+#           "expiration": 1570721159347
+#         }
+#         EOF
 
-    - name: Publish package
-      run: pub publish -f
+#     - name: Publish - dry run
+#       run: flutter pub publish --dry-run
+
+#     - name: Publish package
+#       run: pub publish -f
