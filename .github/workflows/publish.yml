@@ -9,18 +9,31 @@ on:
 jobs:
   publish:
     name: "Publish to pub.dev"
-    permissions:
-      id-token: write # Required for authentication using OIDC
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v1
+
+      # Setup Dart SDK with JWT token
+      - name: Setup Dart SDK with JWT token
+        uses: dart-lang/setup-dart@b64355ae6ca0b5d484f0106a033dd1388965d06d
+
+      # Setup Flutter SDK
+      - name: Setup Flutter SDK
+        uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
 
-      - name: Install dependencies
+      # Install Flutter dependencies
+      - name: Install Flutter dependencies
         run: flutter pub get
 
-      - name: "Publish..."
-        uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+      # Publishing...
+      - name: Publish - dry run
+        run: flutter pub publish --dry-run
+
+      - name: Publish to pub.dev
+        run: flutter pub publish -f
+        # env:
+        #   PUB_HOSTED_URL: https://pub.dev
+        #   # Убедитесь, что у вас настроен PUB_CREDENTIALS в секретах репозитория
+        #   PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
