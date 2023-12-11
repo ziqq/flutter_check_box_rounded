@@ -9,9 +9,9 @@ on:
 jobs:
   publish:
     name: "Publish to pub.dev"
-    runs-on: ubuntu-latest
     permissions:
       id-token: write # Required for authentication using OIDC
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
