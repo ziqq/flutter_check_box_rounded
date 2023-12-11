@@ -16,3 +16,5 @@ jobs:
     uses: ziqq/flutter_ci_workflows/.github/workflows/analysis.yml@main
   tests:
     uses: ziqq/flutter_ci_workflows/.github/workflows/testing.yml@main
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
