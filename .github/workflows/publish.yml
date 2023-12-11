@@ -33,7 +33,6 @@ jobs:
 
       - name: Publish to pub.dev
         run: flutter pub publish -f
-        # env:
-        #   PUB_HOSTED_URL: https://pub.dev
-        #   # Убедитесь, что у вас настроен PUB_CREDENTIALS в секретах репозитория
-        #   PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
+        env:
+          PUB_HOSTED_URL: https://pub.dev
+          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
