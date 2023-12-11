@@ -9,6 +9,8 @@ on:
 jobs:
   publish:
     uses: ziqq/flutter_ci_workflows/.github/workflows/publish_to_pub.yml@main
+    secrets:
+      PANA_TOTAL: '110'
 
 # jobs:
 #   publish:
