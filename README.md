@@ -39,3 +39,6 @@ widgets, duration of the animation, etc.
 The next example show some of the customizations.
 
 <img src="https://github.com/ziqq/flutter_check_box_rounded/blob/main/.images/2.gif?raw=true" width="375" alt="enter image description here">
+
+## Coverage
+[![codecov](https://codecov.io/gh/ziqq/flutter_check_box_rounded/graph/badge.svg?token=9NB42HWAF2)](https://codecov.io/gh/ziqq/flutter_check_box_rounded)
