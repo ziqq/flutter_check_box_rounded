@@ -15,30 +15,3 @@ jobs:
       PUB_CREDENTIAL_JSON: ${{ secrets.PUB_CREDENTIAL_JSON }}
       PUB_OAUTH_ACCESS_TOKEN: ${{ secrets.PUB_OAUTH_ACCESS_TOKEN }}
       PUB_OAUTH_REFRESH_TOKEN: ${{ secrets.PUB_OAUTH_REFRESH_TOKEN }}
-
-# jobs:
-#   publish:
-#     runs-on: ubuntu-latest
-#     container:
-#       image:  google/dart:latest
-#     steps:
-#     - uses: actions/checkout@v1
-
-#     - name: Setup credentials
-#       run: |
-#         mkdir -p ~/.pub-cache
-#         cat <<EOF > ~/.pub-cache/credentials.json
-#         {
-#           "accessToken":"${{ secrets.OAUTH_ACCESS_TOKEN }}",
-#           "refreshToken":"${{ secrets.OAUTH_REFRESH_TOKEN }}",
-#           "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
-#           "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
-#           "expiration": 1570721159347
-#         }
-#         EOF
-
-#     - name: Publish - dry run
-#       run: flutter pub publish --dry-run
-
-#     - name: Publish package
-#       run: pub publish -f
