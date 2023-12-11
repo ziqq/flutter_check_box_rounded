@@ -46,7 +46,6 @@ void main() {
     /// Check widget contains Icon, when [isChecked] is `true`
     expect(find.byType(Icon), findsOneWidget);
   });
-
   testWidgets('CheckBoxRounded toggles state on tap', (WidgetTester t) async {
     bool isChecked = false;
 
