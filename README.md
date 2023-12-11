@@ -1,6 +1,7 @@
 [![Pub Version](https://img.shields.io/pub/v/flutter_check_box_rounded?color=blueviolet)](https://pub.dev/packages/flutter_check_box_rounded)
 [![popularity](https://img.shields.io/pub/popularity/flutter_check_box_rounded?logo=dart)](https://pub.dev/packages/flutter_check_box_rounded/score)
 [![likes](https://img.shields.io/pub/likes/flutter_check_box_rounded?logo=dart)](https://pub.dev/packages/flutter_check_box_rounded/score)
+[![codecov](https://codecov.io/gh/ziqq/flutter_check_box_rounded/graph/badge.svg?token=9NB42HWAF2)](https://codecov.io/gh/ziqq/flutter_check_box_rounded)
 [![style: flutter lints](https://img.shields.io/badge/style-flutter__lints-blue)](https://pub.dev/packages/flutter_lints)
 
 # flutter_check_box_rounded
@@ -41,4 +42,4 @@ The next example show some of the customizations.
 <img src="https://github.com/ziqq/flutter_check_box_rounded/blob/main/.images/2.gif?raw=true" width="375" alt="enter image description here">
 
 ## Coverage
-[![codecov](https://codecov.io/gh/ziqq/flutter_check_box_rounded/graph/badge.svg?token=9NB42HWAF2)](https://codecov.io/gh/ziqq/flutter_check_box_rounded)
+<img src="https://codecov.io/gh/ziqq/flutter_check_box_rounded/graphs/sunburst.svg?token=9NB42HWAF2" width="375">
