@@ -13,6 +13,7 @@ jobs:
       image:  google/dart:latest
     steps:
     - uses: actions/checkout@v1
+
     - name: Setup credentials
       run: |
         mkdir -p ~/.pub-cache
@@ -25,5 +26,9 @@ jobs:
           "expiration": 1570721159347
         }
         EOF
+
+    - name: Publish - dry run
+      run: flutter pub publish --dry-run
+
     - name: Publish package
       run: pub publish -f
