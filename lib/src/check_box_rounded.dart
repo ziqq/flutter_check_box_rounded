@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 /// {@template check_box_rounded}
 /// CheckBoxRounded widget.
+///
 /// Widget that draw a beautiful checkbox rounded.
 /// Provided with animation if wanted.
 /// {@endtemplate}
@@ -62,32 +63,32 @@ class CheckBoxRounded extends StatefulWidget {
   State<CheckBoxRounded> createState() => _CheckBoxRoundedState();
 }
 
+/// State of the [CheckBoxRounded].
 class _CheckBoxRoundedState extends State<CheckBoxRounded> {
   bool _isChecked = false;
 
   @override
   void initState() {
     super.initState();
-
-    if (widget.isChecked != null) {
-      _isChecked = widget.isChecked ?? false;
-    }
+    if (widget.isChecked != null) _isChecked = widget.isChecked ?? false;
   }
 
   @override
   void didUpdateWidget(covariant CheckBoxRounded oldWidget) {
+    super.didUpdateWidget(oldWidget);
     if (widget.isChecked != null && oldWidget.isChecked != widget.isChecked) {
       _isChecked = widget.isChecked!;
     }
-    super.didUpdateWidget(oldWidget);
   }
 
   @override
   Widget build(BuildContext context) {
-    assert(debugCheckHasMaterial(context));
+    assert(
+      debugCheckHasMaterial(context),
+      'A Material widget is required to draw a checkbox',
+    );
 
     final ThemeData themeData = Theme.of(context);
-
     final double effectiveIconSize = widget.size ?? 24.0;
 
     final Color effectiveBorderColor =
@@ -99,7 +100,7 @@ class _CheckBoxRoundedState extends State<CheckBoxRounded> {
     final Color effectiveUncheckedColor =
         widget.uncheckedColor ?? themeData.scaffoldBackgroundColor;
 
-    final effectiveAnimationDuration =
+    final Duration effectiveAnimationDuration =
         widget.animationDuration ?? const Duration(milliseconds: 100);
 
     final Widget checkedWidget = widget.checkedWidget ??
@@ -113,20 +114,27 @@ class _CheckBoxRoundedState extends State<CheckBoxRounded> {
         ? SizedBox(child: widget.uncheckedWidget)
         : const SizedBox.shrink();
 
+    final bool useDecoration =
+        widget.checkedWidget == null && widget.uncheckedWidget == null;
+
     final Widget child = ClipRRect(
       borderRadius: const BorderRadius.all(Radius.circular(100)),
       child: AnimatedContainer(
         duration: effectiveAnimationDuration,
         width: effectiveIconSize,
         height: effectiveIconSize,
-        decoration: BoxDecoration(
-          border: Border.all(
-            width: widget.borderWidth,
-            color: _isChecked ? Colors.transparent : effectiveBorderColor,
-          ),
-          borderRadius: const BorderRadius.all(Radius.circular(100)),
-          color: _isChecked ? effectiveCheckedColor : effectiveUncheckedColor,
-        ),
+        decoration: useDecoration
+            ? BoxDecoration(
+                border: Border.all(
+                  width: widget.borderWidth,
+                  color: _isChecked ? Colors.transparent : effectiveBorderColor,
+                ),
+                borderRadius: const BorderRadius.all(Radius.circular(100)),
+                color: _isChecked
+                    ? effectiveCheckedColor
+                    : effectiveUncheckedColor,
+              )
+            : null,
         child: _isChecked ? checkedWidget : uncheckedWidget,
       ),
     );
