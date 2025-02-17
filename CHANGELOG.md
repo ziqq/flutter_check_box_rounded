@@ -1,53 +1,59 @@
-# Changelog
+## 3.3.0
+
+- **ADDED**: `useDecoration`
+
 
 ## 3.2.3
-  ### Update
-  - packages version's
-  - `analysis_options` make easy
+
+- **CHANGED**: Packages version's
 
 
 ## 3.2.2
-  ### Feat
-  - Added `disable` property which defines interactive changing `isChecked` value on tap gesture
+
+- **ADDED**: `disable` property which defines interactive changing `isChecked` value on tap gesture
+
 
 ## 3.2.1
-  ### Fix
-  - Removed `required` from `onTap`
+
+- **FIXED**: Removed `required` from `onTap`
 
 ## 3.2.0
-  ### Feat
-  - Added customize propertie `borderWidth`
-  ### Update
-  - Will initialise properties in `build` method, not `widget cycle`
+
+- **ADDED**: customize propertie `borderWidth`
+- **CHANGED**: Will initialise properties in `build` method, not `widget cycle`
 
 ## 3.1.6
-  ### Update
-  - Added `void` return result from `onTap` method
+
+- **ADDED**:  `void` return result from `onTap` method
 
 ## 3.1.5
-  ### Update
-  - `LICENSE`
+- **CHANGED**: `LICENSE`
+
 
 ## 3.1.0 - 3.1.4
-  ### Update
-  - `README` & `Example`
+
+- **CHANGED**: `Example`
+
 
 ## 3.1.0
-  ### Fixed
-  - `setState(() {})` in widget lifecycle
+
+- **FIXED**: `setState(() {})` in widget lifecycle
+
 
 ## 3.0.0
-  ### Feat
-  - Released final functionality
+
+- **ADDED**: Final functionality
 
 ## 2.0.0
-  ### Update
-  - Migrated to use null safety
+
+- **CHANGED**: Migrated to use null safety
+
 
 ## 1.1.0
-  ### Feat
-  - Adding documentation
+
+- **ADDED**: Documentation
+
 
 ## 1.0.0
-  ### Feat
-  - Released first functionality
+
+- **ADDED**: First functionality

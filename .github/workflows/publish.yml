@@ -1,4 +1,4 @@
-name: Publish package to pub.dev
+name: Publish to pub.dev
 
 on:
   workflow_dispatch:
